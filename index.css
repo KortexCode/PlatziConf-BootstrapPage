@@ -1,18 +1,22 @@
 #button-primary{
+  color: white;
   background-color: #97c93e;
   font-weight: 500;
 }
 #button-primary2{
+  color: white;
   background-color: #97c93e;
   font-weight: 500;
 }
-.buttonp{
+#btn-compras{
+  color: white;
   background-color: #97c93e;
   font-weight: 500;
 }
-
 body{
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    top:56px;
 }
 .text-platzi {
     color: #97c93e !important;
@@ -53,6 +57,20 @@ body{
   #carousel .overlay .container, #carousel .overlay .row{
     height: 100%;
   }
+  #grid-container-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 350px);
+    place-content: center;
+    gap: 30px;
+  }
+  #speakers .card-body{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto 1fr;
+  } 
+  .modal .modal-content{
+    width: 380px;
+  }
   
   #footer {
     background: linear-gradient(90deg,#1c3643,#273b47 25%,#1e5372);
@@ -62,3 +80,4 @@ body{
     color: white;
     text-decoration: none;
   }
+

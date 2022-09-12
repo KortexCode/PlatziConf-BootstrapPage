@@ -43,7 +43,7 @@
                   <a class="nav-link" href="#become-speaker">Conviértete en orador</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-platzi" href="#" data-toggle="modal" data-target="#modalCompra">Comprar tickets</a>
+                  <a class="nav-link text-platzi " href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar tickets</a>
                 </li>
               </ul>
             </div>
@@ -82,11 +82,11 @@
                   </p>
                   <div class="container">
                     <div class="row">
-                      <div class="col-12 col-sm-5">
+                      <div class="col-12 col-sm-5 col-md-6 col-lg-5 col-xl-4 px-xl-0">
                         <a class="fw-bold mb-3 btn btn-outline-light" href="#become-speaker">Quiero ser orador</a>
                       </div>
-                      <div class="col-12 col-sm-5">
-                        <button id="button-primary" class="btn border border-1 border-dark">Comprar Tikects</button>
+                      <div class="col-12 col-sm-5 col-md-6 col-lg-5 col-xl-4 px-xl-0">
+                        <button id="button-primary" class="btn border border-1 border-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar Tikects</button>
                       </div>
                     </div>
                   </div>   
@@ -98,15 +98,14 @@
       </div>
       <!--speaker-->
       <section id="speakers" class="my-4">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
             <div class="col text-center text-uppercase">
               <small>Conoce a los</small>
               <h2>Oradores</h2>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div id="grid-container-cards" class="row">
               <div class="card">
                 <img src="./assets/speakers/sacha.jpg" class="card-img-top" alt="Foto de Sasha">
                 <div class="card-body">
@@ -117,9 +116,7 @@
                   <h5 class="card-title">Sasha Pro</h5>
                   <p class="card-text">Un buen profesor y programador en JavaScript, dicta el curso de bootstrap 4 en platzi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum tenetur aperiam iste unde quia error voluptatem, corrupti libero doloribus tempora!</p>
                 </div>
-              </div> 
-            </div>             
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
+              </div>     
               <div class="card">
                 <img src="./assets/speakers/freddy.jpeg" class="card-img-top" alt="Foto de Freddy">
                 <div class="card-body">
@@ -131,8 +128,6 @@
                   <p class="card-text"> Seo y co fundador de Platzi, le gustan los Platzi live y hace promociones con descuento al Platzi expert. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum tenetur, corrupti libero doloribus tempora!</p>
                 </div>
               </div> 
-            </div>             
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
               <div class="card">
                 <img src="./assets/speakers/cvander.jpeg" class="card-img-top" alt="Foto de Cvander">
                 <div class="card-body">
@@ -144,8 +139,6 @@
                   <p class="card-text">I co-founded Platzi. Platzi cracked online education. It teaches courses on design, marketing and programming with a 70% completion rate, to over 3 million students worldwide. It aims to be the professional home for lifelong learning of advanced skills.</p>
                 </div>
               </div> 
-            </div>             
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
               <div class="card">
                 <img src="./assets/speakers/leonidas2.jpeg" class="card-img-top" alt="Foto de Leonidas">
                 <div class="card-body">
@@ -156,8 +149,7 @@
                   <h5 class="card-title">Leonidas</h5>
                   <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum tenetur aperiam iste unde quia error voluptatem, corrupti libero doloribus tempora!</p>
                 </div>
-              </div> 
-            </div>             
+              </div>             
           </div>
         </div>
       </section>
@@ -214,7 +206,35 @@
       
     </main> 
     <!-- /Main -->
-
+    <!--Modal-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Comprar Tikects</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="#">
+              <div class="row">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">@</span>
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-success" role="alert">
+              Recibirás un correo de confirmación
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn" id="btn-compras">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/Modal-->
     <!-- Footer -->
     <footer id="footer" class="pb-4 pt-4">
       <div class="container">
@@ -244,42 +264,6 @@
       </div>
     </footer>
     <!-- /Footer -->
-
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Comprar tickets</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-row">
-                <div class="form-group col">
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">@</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                  </div>
-                </div>
-              </div>
-            </form>
-            <div class="alert alert-warning" role="alert">
-              Recibirás un correo de confirmación si sales sorteado
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-platzi">Comprar</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- /Modal -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
